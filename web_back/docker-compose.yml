@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+
+  db:
+    container_name: mysql-web
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: admin_bekir
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: test
+      TZ: Europe/Istanbul
+
+volumes:
+  mysql:
