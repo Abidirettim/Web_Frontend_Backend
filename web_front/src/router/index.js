@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Main from '../views/Main.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import See_Posts from "../views/See_Posts.vue"
+import New_Posts from "../views/New_Posts.vue"
 import NotFound from "../views/404NotFound.vue"
 
 const routes = [
@@ -21,9 +23,19 @@ const routes = [
     component: Register
   },
   {
-    path: '/NotFound',
+    path: '/notfound',
     name: '404NotFound',
     component: NotFound,
+  },
+  {
+    path: '/see_posts',
+    name: 'See_Posts',
+    component: See_Posts,
+  },
+  {
+    path: '/new_posts',
+    name: 'New_Posts',
+    component: New_Posts,
   },
   {
     path: '/:catchAll(.*)',

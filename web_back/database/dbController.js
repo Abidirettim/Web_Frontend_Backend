@@ -19,14 +19,16 @@ const dbControllerWithRequirements = async (sql, requirements) => {
 
 const dbControllerWithoutRequirements = async (sql) => {
 
-  db.query(sql, (err, results, fields) => {
-    if (!err) {
-      resolve(results)
-    } else {
-      reject(err)
-    }
-  })
+  return new Promise((resolve, reject) => {
 
+    db.query(sql, (err, results, fields) => {
+      if (!err) {
+        resolve(results)
+      } else {
+        reject(err)
+      }
+    })
+  })
 }
 
 export default { dbControllerWithRequirements, dbControllerWithoutRequirements }
